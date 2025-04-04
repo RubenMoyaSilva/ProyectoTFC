@@ -1,4 +1,4 @@
-# ProyectoTFG
+# ProyectoTFC
 
 En total, las páginas mínimas que necesitarías serían:
 
