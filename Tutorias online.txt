@@ -76,24 +76,10 @@ Elementos: Texto explicativo con todos los términos y condiciones de la platafo
 -----------------------------------------------------------------------------------------------------------------------------------
 
 5. Página de Pago o Confirmación de Pago (si hay opción de pago):
-Función: Si la plataforma cobra por las sesiones, esta página gestionaría los métodos de pago, facturas y confirmaciones de las transacciones.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Función: Si la plataforma cobra por las sesiones, esta página gestionaría los métodos de pago, facturas y confirmaciones de las transacciones
 
 
 
 Elementos: Información sobre la sesión reservada, métodos de pago (tarjeta de crédito, PayPal, etc.), y resumen del pago.
+
+
