@@ -16,11 +16,9 @@ Elementos: Banner principal, llamada a la acción (CTA), secciones destacadas so
 --------------------------------------------------------------------------------------------------------------------------------
 
 2. Página de Registro (Signup) / Inicio de Sesión (Login):
-Función: Permite que los nuevos usuarios (tanto estudiantes como tutores) se registren. Tendría dos opciones: registrarse como tutor o como estudiante.
+Función: Permite que los nuevos usuarios (tanto estudiantes como tutores) se registren. Tendría dos opciones: registrarse como tutor o como estudiante. Tambien permite a los usuarios registrados iniciar sesión en la plataforma.
 
 Elementos: Formularios de registro con campos como nombre, correo, contraseña, rol (estudiante o tutor), y otros datos relevantes.
-
-Función: Permite a los usuarios registrados iniciar sesión en la plataforma.
 
 Elementos: Formulario de inicio de sesión (correo electrónico y contraseña), opción para recuperar contraseña.
 
@@ -28,12 +26,9 @@ Elementos: Formulario de inicio de sesión (correo electrónico y contraseña), 
 
 3. Página de Perfil del Usuario (Perfil de Estudiante y Tutor) y Página de Panel de Control (Dashboard):
 
-Función: Los usuarios (estudiantes y tutores) pueden gestionar sus actividades dentro de la plataforma. Para estudiantes, podría incluir sus tutorías reservadas, historial de sesiones, y reseñas. Para tutores, mostraría sus clases agendadas y estadísticas de rendimiento.
+Función: Los usuarios (estudiantes y tutores) pueden gestionar sus actividades dentro de la plataforma. Para estudiantes, podría incluir sus tutorías reservadas y historial de sesiones. Para tutores, mostraría sus clases agendadas, estadísticas de rendimiento, y reseñas. Cada usuario (estudiante o tutor) puede tener un perfil donde gestione sus datos personales, preferencias, y en el caso de los tutores, sus materias de enseñanza y disponibilidad.
 
-Elementos: Listado de sesiones pasadas y futuras, indicadores de rendimiento (para tutores), accesos rápidos a editar perfil o gestionar disponibilidad.
-Función: Cada usuario (estudiante o tutor) puede tener un perfil donde gestione sus datos personales, preferencias, y en el caso de los tutores, sus materias de enseñanza y disponibilidad.
-
-Elementos: Foto de perfil, información personal, materias impartidas (para tutores), historial de clases (para estudiantes).
+Elementos: Listado de sesiones pasadas y futuras, indicadores de rendimiento (para tutores), accesos rápidos a editar perfil o gestionar disponibilidad. Foto de perfil, información personal, materias impartidas (para tutores), historial de clases (para estudiantes).
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
