@@ -46,7 +46,7 @@ Elementos: Barra de búsqueda, filtros (por materia, nivel educativo, precio), l
     4.2. Reservar Sesión (Agenda):
     Función: Los estudiantes pueden agendar sesiones con los tutores. Esta página debe mostrar la disponibilidad del tutor y permitir seleccionar un horario para la tutoría.
 
-    Elementos: Calendario interactivo, opciones de duración de la sesión, método de pago (si aplica).
+    Elementos: Calendario interactivo, opciones de duración de la sesión.
 
     4.3. Reseñas y Calificaciones:
     Función: Los estudiantes pueden dejar una reseña sobre un tutor tras haber completado una sesión. Estas reseñas serán visibles en los perfiles de los tutores.
