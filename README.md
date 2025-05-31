@@ -1,7 +1,5 @@
 # ProyectoTFC
 
-En total, las páginas mínimas que necesitarías serían:
-
 Página de Inicio (1)
 
 Página de Registro (2)
