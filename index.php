@@ -3,7 +3,6 @@ require_once 'includes/db.php';
 require_once 'includes/funciones.php';
 
 include 'includes/header.php';
-include 'includes/nav.php';
 ?>
 
 <main>

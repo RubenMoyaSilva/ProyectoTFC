@@ -1,6 +1,6 @@
 <footer class="footer">
   <div class="container">
-    <p>&copy; <?php echo date('Y'); ?> Tutoria Platform. Todos los derechos reservados.</p>
+    <p>&copy; <?php echo date('Y'); ?> Trabajo de fin de grado superior de Rubén Moya Silva. Todos los derechos reservados.</p>
     <div class="footer-enlaces">
       <a href="#terminos">Términos y Condiciones</a> |
       <a href="#privacidad">Política de Privacidad</a>

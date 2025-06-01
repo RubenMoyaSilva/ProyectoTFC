@@ -81,3 +81,13 @@ CREATE TABLE mensajes_contacto (
     mensaje TEXT NOT NULL,
     recibido_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE tutorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    estudiante_id INT NOT NULL,
+    tutor_id INT NOT NULL,
+    fecha DATETIME NOT NULL,
+    duracion INT NOT NULL, -- en minutos
+    estado VARCHAR(50) DEFAULT 'pendiente',
+    FOREIGN KEY (estudiante_id) REFERENCES usuarios(id),
+    FOREIGN KEY (tutor_id) REFERENCES usuarios(id)
+);

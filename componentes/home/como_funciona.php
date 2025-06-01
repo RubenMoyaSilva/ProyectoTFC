@@ -16,7 +16,7 @@
         <p>Usa filtros para buscar tutores por materia, precio y disponibilidad.</p>
       </div>
 
-      <div style="flex: 1; min-width: 250px; text-align: center;">
+      <div>
         <img src="assets/img/agendar.png" alt="Agendar sesión">
         <h3>3. Agenda y aprende</h3>
         <p>Reserva una sesión, habla con tu tutor y mejora tus conocimientos.</p>
