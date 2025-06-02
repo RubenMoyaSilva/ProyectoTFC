@@ -1,14 +1,14 @@
 <?php
 session_start();
 include('includes/db.php');
-include('includes/header.php');
+
 
 // Verificar si el usuario está logueado
 if (!isset($_SESSION['usuario_id'])) {
   header("Location: auth.php");
   exit();
 }
-
+include('includes/header.php');
 // Datos básicos del usuario
 $usuario_id = $_SESSION['usuario_id'];
 $usuario_nombre = $_SESSION['usuario_nombre'];

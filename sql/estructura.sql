@@ -1,5 +1,3 @@
--- estructura.sql
-
 CREATE DATABASE IF NOT EXISTS bbdd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE bbdd;
 
@@ -17,7 +15,7 @@ CREATE TABLE usuarios (
 -- Información adicional para tutores
 CREATE TABLE tutores (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
+    usuario_id INT NOT NULL UNIQUE,
     biografia TEXT,
     materias TEXT, -- Puede ser JSON o texto delimitado
     calificacion_promedio DECIMAL(3,2) DEFAULT 0,
@@ -25,7 +23,7 @@ CREATE TABLE tutores (
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
--- Disponibilidad de tutores (por ejemplo, días y franjas horarias)
+-- Disponibilidad de tutores
 CREATE TABLE disponibilidad (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tutor_id INT NOT NULL,
@@ -49,7 +47,7 @@ CREATE TABLE sesiones (
     FOREIGN KEY (tutor_id) REFERENCES tutores(id) ON DELETE CASCADE
 );
 
--- Reseñas y calificaciones
+-- Reseñas
 CREATE TABLE resenas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tutor_id INT NOT NULL,
@@ -61,7 +59,7 @@ CREATE TABLE resenas (
     FOREIGN KEY (estudiante_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
--- Mensajes para chat
+-- Chat
 CREATE TABLE mensajes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     emisor_id INT NOT NULL,
@@ -73,7 +71,7 @@ CREATE TABLE mensajes (
     FOREIGN KEY (receptor_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
--- Mensajes de contacto / soporte
+-- Formulario de contacto
 CREATE TABLE mensajes_contacto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -81,6 +79,8 @@ CREATE TABLE mensajes_contacto (
     mensaje TEXT NOT NULL,
     recibido_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Tutorías (repetida por compatibilidad con rendimiento.php)
 CREATE TABLE tutorias (
     id INT AUTO_INCREMENT PRIMARY KEY,
     estudiante_id INT NOT NULL,
