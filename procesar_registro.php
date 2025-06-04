@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error al registrar el usuario.";
     }
 } else {
-    header("Location: auth.php");
+    header("Location: perfil.php");
     exit();
 }
 

@@ -24,7 +24,6 @@ $stmt3 = $conn->prepare("SELECT COUNT(*) FROM resenas WHERE tutor_id = ? AND pun
 $stmt3->execute([$tutor_id]);
 $positivas = $stmt3->fetchColumn();
 ?>
-?>
 
 <div class="rendimiento">
     <h2>Rendimiento del Tutor</h2>
