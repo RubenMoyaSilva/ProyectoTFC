@@ -13,7 +13,7 @@
 <header>
     <div class="container header-flex">
         <a href="index.php">
-            <img src="assets/img/logo.png" class="logo" alt="Logo Tutorias Online">
+            <img src="assets/img/logo.jpg" class="logo" alt="Logo Tutorias Online">
         </a>
         <?php include 'nav.php'; ?>
     </div>
