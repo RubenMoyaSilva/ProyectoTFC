@@ -139,7 +139,7 @@ if (isset($_GET['reservar']) && $_GET['reservar'] == '1') {
                 <input type="number" id="duracion" name="duracion" min="30" max="180" value="60" required>
 
                 <label for="comentarios">Comentarios (opcional):</label>
-                <textarea id="comentarios" name="comentarios" rows="3"></textarea>
+                <textarea id="comentarios" name="comentarios" rows="1"></textarea>
 
                 <button type="submit" class="btn btn-success">Confirmar Reserva</button>
             </form>
