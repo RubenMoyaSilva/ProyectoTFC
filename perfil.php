@@ -2,24 +2,37 @@
 session_start();
 include('includes/db.php');
 
-
-// Verificar si el usuario está logueado
 if (!isset($_SESSION['usuario_id'])) {
-  header("Location: auth.php");
-  exit();
+    header("Location: auth.php");
+    exit();
 }
+
 include('includes/header.php');
-// Datos básicos del usuario
+
 $usuario_id = $_SESSION['usuario_id'];
 $usuario_nombre = $_SESSION['usuario_nombre'];
 $usuario_rol = $_SESSION['rol'];
+
+// Bandera para mostrar mensaje
+$perfil_actualizado = isset($_GET['actualizado']) && $_GET['actualizado'] == '1';
 ?>
 
 <main class="contenedor-perfil">
-  <h1>Bienvenido, <?php echo htmlspecialchars($usuario_nombre); ?></h1>
+  <h1>Bienvenido, <?= htmlspecialchars($usuario_nombre); ?></h1>
+
+  <?php if ($perfil_actualizado): ?>
+    <p class="mensaje-exito">Perfil actualizado correctamente.</p>
+  <?php endif; ?>
 
   <section class="perfil-info">
     <?php include('componentes/perfil/info_personal.php'); ?>
+  </section>
+
+  <section class="perfil-edicion">
+    <a href="?editar=1" class="btn-editar">Editar perfil</a>
+    <?php if (isset($_GET['editar']) && $_GET['editar'] == '1'): ?>
+      <?php include('componentes/perfil/editar_perfil.php'); ?>
+    <?php endif; ?>
   </section>
 
   <section class="perfil-dashboard">

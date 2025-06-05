@@ -3,7 +3,7 @@
     <h1>Conecta con el tutor ideal para ti</h1>
     <p>Encuentra ayuda personalizada para alcanzar tus metas académicas.</p>
     <a href="auth.php">
-      Inicia Sesion
+      Inicia Sesion o Registrate
     </a>
   </div>
 </section>

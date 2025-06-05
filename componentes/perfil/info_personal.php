@@ -1,7 +1,6 @@
 <?php
 
 require_once(__DIR__ . '/../../includes/db.php');
-
 // Verifica que el usuario está logueado
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: auth.php");

@@ -48,15 +48,15 @@ CREATE TABLE sesiones (
 );
 
 -- Reseñas
-CREATE TABLE resenas (
+CREATE TABLE IF NOT EXISTS resenas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tutor_id INT NOT NULL,
     estudiante_id INT NOT NULL,
-    puntuacion TINYINT NOT NULL CHECK (puntuacion BETWEEN 1 AND 5),
-    comentario TEXT,
-    creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (tutor_id) REFERENCES tutores(id) ON DELETE CASCADE,
-    FOREIGN KEY (estudiante_id) REFERENCES usuarios(id) ON DELETE CASCADE
+    calificacion TINYINT NOT NULL CHECK (calificacion BETWEEN 1 AND 5),
+    comentario TEXT NOT NULL,
+    fecha DATETIME NOT NULL,
+    FOREIGN KEY (tutor_id) REFERENCES tutores(usuario_id),
+    FOREIGN KEY (estudiante_id) REFERENCES usuarios(id)
 );
 
 -- Chat

@@ -1,33 +1,37 @@
 <?php
-require_once __DIR__ . '/../../includes/db.php';
-
 if (!isset($_SESSION['usuario_id']) || $_SESSION['rol'] !== 'tutor') {
-    header("Location: perfil.php");
-    exit;
+    echo "<p>No autorizado.</p>";
+    return;
 }
 
 $tutor_id = $_SESSION['usuario_id'];
 
-// Clases dadas
-$stmt1 = $conn->prepare("SELECT COUNT(*) FROM tutorias WHERE tutor_id = ?");
-$stmt1->execute([$tutor_id]);
-$clases_dadas = $stmt1->fetchColumn();
+try {
+    // Obtener número total de sesiones completadas
+    $stmt = $conn->prepare("
+        SELECT COUNT(*) FROM sesiones
+        WHERE tutor_id = ? AND estado = 'completada'
+    ");
+    $stmt->execute([$tutor_id]);
+    $total_sesiones = $stmt->fetchColumn();
 
-// Calificación promedio
-$stmt2 = $conn->prepare("SELECT AVG(puntuacion) FROM resenas WHERE tutor_id = ?");
-$stmt2->execute([$tutor_id]);
-$promedio_raw = $stmt2->fetchColumn();
-$promedio = $promedio_raw !== null ? round($promedio_raw, 2) : null;
-
-// Reseñas positivas (puntuacion >= 4)
-$stmt3 = $conn->prepare("SELECT COUNT(*) FROM resenas WHERE tutor_id = ? AND puntuacion >= 4");
-$stmt3->execute([$tutor_id]);
-$positivas = $stmt3->fetchColumn();
+    // Obtener promedio de calificación (resenas)
+    $stmt = $conn->prepare("
+        SELECT AVG(calificacion) AS promedio 
+        FROM resenas 
+        WHERE tutor_id = ?
+    ");
+    $stmt->execute([$tutor_id]);
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+    $promedio = number_format($resultado['promedio'] ?? 0, 2);
+} catch (PDOException $e) {
+    echo "<p>Error al cargar datos de rendimiento: " . htmlspecialchars($e->getMessage()) . "</p>";
+    return;
+}
 ?>
 
-<div class="rendimiento">
-    <h2>Rendimiento del Tutor</h2>
-    <p><strong>Clases dadas:</strong> <?= $clases_dadas ?></p>
-    <p><strong>Calificación promedio:</strong> <?= $promedio ?: 'Sin reseñas' ?>/5</p>
-    <p><strong>Reseñas positivas:</strong> <?= $positivas ?></p>
-</div>
+<section class="tutor-rendimiento">
+    <h3>Rendimiento como tutor</h3>
+    <p><strong>Total de sesiones completadas:</strong> <?= $total_sesiones ?></p>
+    <p><strong>Calificación promedio:</strong> <?= $promedio ?>/5.00</p>
+</section>

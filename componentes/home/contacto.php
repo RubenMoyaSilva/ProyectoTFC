@@ -3,7 +3,7 @@
     <h2 class="titulo-seccion">¿Necesitas ayuda?</h2>
     <p>Ponte en contacto con nosotros si tienes preguntas, sugerencias o necesitas soporte.</p>
 
-    <form action="contacto.php" method="POST" class="formulario-contacto">
+    <form action="index.php" method="POST" class="formulario-contacto">
       <div class="form-grupo">
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" required>
