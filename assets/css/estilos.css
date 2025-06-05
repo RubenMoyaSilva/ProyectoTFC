@@ -84,6 +84,9 @@ footer.footer {
   border-top: 1px solid #ddd;
 }
 
+#texto {
+  text-align: center;
+}
 .footer .container {
   max-width: 800px;
   margin: 0 auto;
@@ -1488,6 +1491,9 @@ table th {
     font-weight: bold;
 }
 
+#what {
+  text-align: center;
+}
 
 /* Responsive */
 @media (max-width: 768px) {

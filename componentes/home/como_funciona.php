@@ -1,6 +1,6 @@
 <section class="como-funciona">
   <div class="container">
-    <h2>¿Cómo funciona?</h2>
+    <h2 id="what">¿Cómo funciona?</h2>
 
     <div class="pasos-funciona">
       <div class="paso">
